@@ -6,6 +6,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import LifeManagerPage from './LifeManagerPage';
 import LeisurePage from './LeisurePage';
+import ServicesPage from './ServicesPage';
 import './App.css';
 
 // Компонент главной страницы
@@ -126,6 +127,10 @@ function App() {
     // Здесь можно добавить навигацию для других страниц из главного меню
   };
 
+ const handleNavigateToServices = () => {
+    setCurrentPage('services');
+  };
+
   const handleNavigateToLeisure = () => {
     setCurrentPage('leisure');
   };
@@ -145,9 +150,11 @@ function App() {
         <LifeManagerPage 
           onBack={handleBackToMain} 
           onNavigateToLeisure={handleNavigateToLeisure}
+          onNavigateToServices={handleNavigateToServices}
         />
       )}
       {currentPage === 'leisure' && <LeisurePage onBack={handleBackToLifeManager} />}
+      {currentPage === 'services' && <ServicesPage onBack={handleBackToLifeManager} />}
     </>
   );
 }

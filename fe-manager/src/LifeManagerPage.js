@@ -1,7 +1,7 @@
 import React from 'react';
 import './LifeManagerPage.css';
 
-function LifeManagerPage({ onBack, onNavigateToLeisure }) {
+function LifeManagerPage({ onBack, onNavigateToLeisure, onNavigateToServices }) {
   const lifeManagerItems = [
     { id: 1, title: 'Здоровье', icon: '❤️', description: 'Мониторинг здоровья и медицинские услуги' },
     { id: 2, title: 'Спорт', icon: '🏃', description: 'Тренировки, спортивные мероприятия' },
@@ -13,6 +13,8 @@ function LifeManagerPage({ onBack, onNavigateToLeisure }) {
   const handleItemClick = (item) => {
     if (item.title === 'Досуг') {
       onNavigateToLeisure();
+    } else if (item.title === 'Услуги') {
+      onNavigateToServices();
     }
     // Здесь можно добавить навигацию для других пунктов
   };
