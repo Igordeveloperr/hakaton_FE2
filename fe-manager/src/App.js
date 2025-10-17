@@ -8,6 +8,7 @@ import LifeManagerPage from './LifeManagerPage';
 import LeisurePage from './LeisurePage';
 import ServicesPage from './ServicesPage';
 import SportsPage from './SportsPage';
+import HealthPage from './HealthPage';
 import './App.css';
 
 // Компонент главной страницы
@@ -128,6 +129,9 @@ function App() {
     // Здесь можно добавить навигацию для других страниц из главного меню
   };
 
+  const handleNavigateToHealth = () => {
+    setCurrentPage('health');
+  };
  const handleNavigateToSports = () => {
     setCurrentPage('sports');
   };
@@ -157,11 +161,13 @@ function App() {
           onNavigateToLeisure={handleNavigateToLeisure}
           onNavigateToServices={handleNavigateToServices}
           onNavigateToSports={handleNavigateToSports}
+          onNavigateToHealth={handleNavigateToHealth}
         />
       )}
       {currentPage === 'leisure' && <LeisurePage onBack={handleBackToLifeManager} />}
       {currentPage === 'services' && <ServicesPage onBack={handleBackToLifeManager} />}
       {currentPage === 'sports' && <SportsPage onBack={handleBackToLifeManager} />}
+      {currentPage === 'health' && <HealthPage onBack={handleBackToLifeManager} />}
     </>
   );
 }

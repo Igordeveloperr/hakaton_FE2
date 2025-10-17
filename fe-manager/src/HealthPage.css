@@ -1,0 +1,354 @@
+/* Стили для страницы Здоровье */
+
+/* Заголовок с кнопкой назад */
+.app-header {
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.app-header h1 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.address {
+  color: #666;
+  font-size: 14px;
+}
+
+/* Кнопка назад */
+.back-button {
+  background: none;
+  border: none;
+  font-size: 24px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.back-button:hover {
+  background-color: #f0f0f0;
+}
+
+/* Секции */
+.section {
+  margin-bottom: 24px;
+}
+
+.section h2 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: #333;
+}
+
+.section h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #333;
+}
+
+/* Карточки основных показателей */
+.health-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.health-card {
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 16px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.health-card-icon {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.health-card-value {
+  display: block;
+  font-size: 18px;
+  font-weight: 700;
+  color: #51cf66;
+  margin-bottom: 4px;
+}
+
+.health-card-label {
+  font-size: 12px;
+  color: #666;
+  font-weight: 500;
+}
+
+/* Круговые прогресс-бары */
+.activity-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-bottom: 8px;
+}
+
+.circular-progress {
+  text-align: center;
+}
+
+.progress-circle {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 8px;
+  border-radius: 50%;
+  background: #f8f9fa;
+}
+
+.progress-fill {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  position: relative;
+}
+
+.progress-fill::after {
+  content: '';
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  right: 8px;
+  bottom: 8px;
+  background: white;
+  border-radius: 50%;
+}
+
+.progress-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 1;
+}
+
+.progress-value {
+  display: block;
+  font-size: 16px;
+  font-weight: 700;
+  color: #333;
+  line-height: 1;
+}
+
+.progress-unit {
+  display: block;
+  font-size: 10px;
+  color: #666;
+  margin-top: 2px;
+}
+
+.progress-label {
+  font-size: 12px;
+  color: #666;
+  font-weight: 500;
+}
+
+/* Линейные графики */
+.chart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.chart-period, .chart-average {
+  font-size: 14px;
+  color: #666;
+}
+
+.chart-container {
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.chart-container.small {
+  padding: 16px;
+}
+
+.line-chart {
+  width: 100%;
+}
+
+.chart-lines {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  height: 120px;
+}
+
+.chart-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+}
+
+.chart-bar-container {
+  height: 100px;
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 8px;
+  width: 12px;
+}
+
+.chart-bar {
+  width: 100%;
+  border-radius: 6px 6px 0 0;
+  transition: height 0.3s ease;
+  min-height: 4px;
+}
+
+.chart-label {
+  font-size: 10px;
+  color: #666;
+  text-align: center;
+}
+
+/* Статистика графиков */
+.chart-stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.chart-stat {
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 12px;
+  text-align: center;
+}
+
+.stat-value {
+  display: block;
+  font-size: 16px;
+  font-weight: 700;
+  color: #51cf66;
+  margin-bottom: 4px;
+}
+
+.stat-label {
+  font-size: 12px;
+  color: #666;
+}
+
+/* Ряд графиков */
+.charts-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+/* Рекомендации */
+.recommendations {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.recommendation-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.recommendation-icon {
+  font-size: 20px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.recommendation-content h4 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 4px;
+  color: #333;
+}
+
+.recommendation-content p {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* Адаптивность */
+@media (max-width: 480px) {
+  .health-cards {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+  
+  .activity-cards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+  
+  .charts-row {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  .progress-circle {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .chart-lines {
+    height: 100px;
+  }
+  
+  .chart-bar-container {
+    height: 80px;
+  }
+  
+  .health-card {
+    padding: 12px 8px;
+  }
+  
+  .health-card-value {
+    font-size: 16px;
+  }
+}
+
+/* Улучшения для мобильных */
+@media (max-width: 380px) {
+  .health-cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .activity-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
