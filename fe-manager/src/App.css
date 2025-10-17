@@ -1,38 +1,207 @@
-.App {
-  text-align: center;
+/* Общие стили для мобильного приложения */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+  line-height: 1.5;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.app {
+  max-width: 480px;
+  margin: 0 auto;
+  background-color: #fff;
   min-height: 100vh;
+  padding: 16px;
+}
+
+/* Заголовок */
+.app-header {
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #eee;
+}
+
+.app-header h1 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.address {
+  color: #666;
+  font-size: 14px;
+}
+
+/* Секции */
+.section {
+  margin-bottom: 24px;
+}
+
+.section h2 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+/* Слайдер новостей - ОДИНАКОВАЯ ВЫСОТА */
+.news-slider {
+  margin: 0 -16px;
+  padding: 0 16px;
+}
+
+.news-card {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  height: 220px; /* ФИКСИРОВАННАЯ ВЫСОТА */
   display: flex;
   flex-direction: column;
+}
+
+.news-card-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #333;
+  border-bottom: 1px solid #f0f0f0;
+  padding-bottom: 8px;
+  flex-shrink: 0; /* Заголовок не сжимается */
+}
+
+.news-card-content {
+  flex: 1; /* Занимает все оставшееся пространство */
+  overflow-y: auto; /* Прокрутка если контент не помещается */
+  min-height: 0; /* Важно для flexbox */
+}
+
+.news-card-list {
+  list-style: none;
+}
+
+.news-card-item {
+  padding: 6px 0;
+  font-size: 14px;
+  color: #666;
+  border-bottom: 1px solid #f8f8f8;
+}
+
+.news-card-item:last-child {
+  border-bottom: none;
+}
+
+/* Стили для скроллбара */
+.news-card-content::-webkit-scrollbar {
+  width: 4px;
+}
+
+.news-card-content::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 2px;
+}
+
+.news-card-content::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 2px;
+}
+
+.news-card-content::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* Стили Swiper */
+.swiper {
+  padding: 8px 4px 40px 4px !important;
+}
+
+.swiper-slide {
+  height: auto; /* Высота определяется содержимым */
+}
+
+.swiper-wrapper {
+  align-items: stretch; /* Все слайды одинаковой высоты */
+}
+
+.swiper-slide {
+  height: auto !important; /* Переопределяем высоту от Swiper */
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: #007bff !important;
+  width: 32px !important;
+  height: 32px !important;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  font-size: 16px !important;
+  font-weight: bold;
+}
+
+.swiper-pagination-bullet {
+  background: #ccc !important;
+  opacity: 1 !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: #007bff !important;
+}
+
+/* Разделитель */
+.divider {
+  border: none;
+  border-top: 1px solid #e0e0e0;
+  margin: 24px 0;
+}
+
+/* Меню (Показания счетчиков) */
+.menu-list {
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #e0e0e0;
+}
+
+.menu-item {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 16px;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 16px;
 }
 
-.App-link {
-  color: #61dafb;
+.menu-item:last-child {
+  border-bottom: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.chevron {
+  color: #999;
+  font-weight: bold;
+}
+
+/* Список Моя квартира */
+.apartment-list {
+  list-style-type: none;
+}
+
+.apartment-list li {
+  padding: 16px;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 16px;
+}
+
+.apartment-list li:last-child {
+  border-bottom: none;
 }

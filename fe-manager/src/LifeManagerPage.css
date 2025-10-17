@@ -1,0 +1,140 @@
+/* Стили для страницы LiFE менеджер */
+
+/* Заголовок с кнопкой назад */
+.app-header {
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #eee;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.app-header h1 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 4px;
+  flex: 1;
+}
+
+.address {
+  color: #666;
+  font-size: 14px;
+}
+
+/* Кнопка назад */
+.back-button {
+  background: none;
+  border: none;
+  font-size: 24px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.back-button:hover {
+  background-color: #f0f0f0;
+}
+
+/* Главное меню */
+.main-menu {
+  background-color: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.menu-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  border-bottom: 1px solid #f0f0f0;
+  transition: background-color 0.2s ease;
+  cursor: pointer;
+}
+
+.menu-item:last-child {
+  border-bottom: none;
+}
+
+.menu-item:hover {
+  background-color: #f8f9fa;
+}
+
+.menu-item-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+}
+
+.menu-icon {
+  font-size: 20px;
+  width: 24px;
+  text-align: center;
+}
+
+.menu-title {
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+}
+
+.chevron {
+  color: #999;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+/* Стили для страницы LiFE менеджера */
+.life-manager-item {
+  padding: 20px 16px;
+  align-items: flex-start;
+}
+
+.life-manager-icon {
+  font-size: 24px;
+  width: 32px;
+  margin-top: 2px;
+}
+
+.life-manager-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+
+.menu-description {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.4;
+}
+
+.life-manager-info {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.life-manager-info p {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* Секции */
+.section {
+  margin-bottom: 24px;
+}
