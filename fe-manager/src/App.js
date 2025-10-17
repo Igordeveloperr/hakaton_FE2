@@ -20,7 +20,10 @@ function MainPage({ onNavigate }) {
       title: 'Электричество',
       items: [
         'Аварийное отключение воды',
-      ]
+      ],
+      image: '⚡',
+      imageBg: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+      date: 'Сегодня 14:30'
     },
     {
       id: 2,
@@ -28,7 +31,10 @@ function MainPage({ onNavigate }) {
       items: [
         'Аварийное отключение ХТВС',
         'Отключатель электр'
-      ]
+      ],
+      image: '🔌',
+      imageBg: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
+      date: 'Завтра 10:00-16:00'
     },
     {
       id: 3,
@@ -38,7 +44,45 @@ function MainPage({ onNavigate }) {
         'Аварийные отключения',
         'Горячая вода',
         'Холодная вода'
-      ]
+      ],
+      image: '💧',
+      imageBg: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)',
+      date: '25.05 09:00-18:00'
+    },
+    {
+      id: 4,
+      title: 'Отопление',
+      items: [
+        'Пуск тепла в дома',
+        'Подготовка к отопительному сезону'
+      ],
+      image: '🔥',
+      imageBg: 'linear-gradient(135deg, #fa709a 0%, #fee140 100%)',
+      date: 'С 15 октября'
+    },
+    {
+      id: 5,
+      title: 'Капремонт',
+      items: [
+        'Ремонт фасада',
+        'Замена лифтов',
+        'Обновление коммуникаций'
+      ],
+      image: '🏗️',
+      imageBg: 'linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)',
+      date: 'Июнь-Август 2024'
+    },
+    {
+      id: 6,
+      title: 'Уборка территории',
+      items: [
+        'Стрижка газонов',
+        'Уборка листьев',
+        'Мойка фасадов'
+      ],
+      image: '🧹',
+      imageBg: 'linear-gradient(135deg, #5ee7df 0%, #b490ca 100%)',
+      date: 'Каждую пятницу'
     }
   ];
 
@@ -77,8 +121,18 @@ function MainPage({ onNavigate }) {
               {newsCards.map((card) => (
                 <SwiperSlide key={card.id}>
                   <div className="news-card">
-                    <h3 className="news-card-title">{card.title}</h3>
+                    <div 
+                      className="news-card-image"
+                      style={{ background: card.imageBg }}
+                    >
+                      <div className="news-card-emoji-container">
+                        <span className="news-card-emoji">{card.image}</span>
+                      </div>
+                      <div className="news-card-date">{card.date}</div>
+                    </div>
+                    
                     <div className="news-card-content">
+                      <h3 className="news-card-title">{card.title}</h3>
                       <ul className="news-card-list">
                         {card.items.map((item, index) => (
                           <li key={index} className="news-card-item">
@@ -127,19 +181,21 @@ function App() {
     if (page === 'LiFE менеджер') {
       setCurrentPage('life-manager');
     }
-    // Здесь можно добавить навигацию для других страниц из главного меню
   };
+
   const handleNavigateToScenarios = () => {
     setCurrentPage('scenarios');
   };
+
   const handleNavigateToHealth = () => {
     setCurrentPage('health');
   };
- const handleNavigateToSports = () => {
+
+  const handleNavigateToSports = () => {
     setCurrentPage('sports');
   };
 
- const handleNavigateToServices = () => {
+  const handleNavigateToServices = () => {
     setCurrentPage('services');
   };
 

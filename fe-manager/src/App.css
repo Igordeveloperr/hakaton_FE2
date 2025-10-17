@@ -1,17 +1,131 @@
-/* Общие стили для мобильного приложения */
-* {
-  box-sizing: border-box;
-  margin: 0;
+/* Обновленные стили для карточек новостей с одинаковыми картинками */
+
+/* Слайдер новостей */
+.news-slider {
+  margin: 0 -16px;
+  padding: 0 16px;
+}
+
+.news-card {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  height: 280px; /* Фиксированная высота */
+  display: flex;
+  flex-direction: column;
+}
+
+.news-card-image {
+  height: 120px; /* Фиксированная высота картинки */
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 0;
 }
 
-body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
-  background-color: #f5f5f5;
-  color: #333;
-  line-height: 1.5;
+.news-card-emoji-container {
+  width: 60px; /* Фиксированная ширина контейнера */
+  height: 60px; /* Фиксированная высота контейнера */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.3);
 }
 
+.news-card-emoji {
+  font-size: 28px; /* Фиксированный размер эмодзи */
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+  display: block;
+  line-height: 1;
+}
+
+.news-card-date {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 500;
+  color: #666;
+  backdrop-filter: blur(10px);
+}
+
+.news-card-content {
+  padding: 16px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0; /* Важно для flexbox */
+}
+
+.news-card-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #333;
+  line-height: 1.3;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.news-card-list {
+  list-style: none;
+  flex: 1;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto; /* Прокрутка если много пунктов */
+}
+
+.news-card-item {
+  padding: 6px 0;
+  font-size: 14px;
+  color: #666;
+  border-bottom: 1px solid #f8f8f8;
+  position: relative;
+  padding-left: 12px;
+  line-height: 1.3;
+}
+
+.news-card-item:last-child {
+  border-bottom: none;
+}
+
+.news-card-item::before {
+  content: "•";
+  color: #999;
+  position: absolute;
+  left: 0;
+}
+
+/* Стили для скроллбара в списке */
+.news-card-list::-webkit-scrollbar {
+  width: 3px;
+}
+
+.news-card-list::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 2px;
+}
+
+.news-card-list::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 2px;
+}
+
+.news-card-list::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* Остальные стили остаются без изменений */
 .app {
   max-width: 480px;
   margin: 0 auto;
@@ -20,7 +134,6 @@ body {
   padding: 16px;
 }
 
-/* Заголовок */
 .app-header {
   margin-bottom: 24px;
   padding-bottom: 16px;
@@ -38,7 +151,6 @@ body {
   font-size: 14px;
 }
 
-/* Секции */
 .section {
   margin-bottom: 24px;
 }
@@ -49,71 +161,61 @@ body {
   margin-bottom: 16px;
 }
 
-/* Слайдер новостей - ОДИНАКОВАЯ ВЫСОТА */
-.news-slider {
-  margin: 0 -16px;
-  padding: 0 16px;
+.divider {
+  border: none;
+  border-top: 1px solid #e0e0e0;
+  margin: 24px 0;
 }
 
-.news-card {
-  background: #fff;
-  border: 1px solid #e0e0e0;
+.main-menu {
+  background-color: #fff;
   border-radius: 12px;
-  padding: 16px;
+  overflow: hidden;
+  border: 1px solid #e0e0e0;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  height: 220px; /* ФИКСИРОВАННАЯ ВЫСОТА */
+}
+
+.menu-item {
   display: flex;
-  flex-direction: column;
-}
-
-.news-card-title {
-  font-size: 16px;
-  font-weight: 600;
-  margin-bottom: 12px;
-  color: #333;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
   border-bottom: 1px solid #f0f0f0;
-  padding-bottom: 8px;
-  flex-shrink: 0; /* Заголовок не сжимается */
+  transition: background-color 0.2s ease;
+  cursor: pointer;
 }
 
-.news-card-content {
-  flex: 1; /* Занимает все оставшееся пространство */
-  overflow-y: auto; /* Прокрутка если контент не помещается */
-  min-height: 0; /* Важно для flexbox */
-}
-
-.news-card-list {
-  list-style: none;
-}
-
-.news-card-item {
-  padding: 6px 0;
-  font-size: 14px;
-  color: #666;
-  border-bottom: 1px solid #f8f8f8;
-}
-
-.news-card-item:last-child {
+.menu-item:last-child {
   border-bottom: none;
 }
 
-/* Стили для скроллбара */
-.news-card-content::-webkit-scrollbar {
-  width: 4px;
+.menu-item:hover {
+  background-color: #f8f9fa;
 }
 
-.news-card-content::-webkit-scrollbar-track {
-  background: #f1f1f1;
-  border-radius: 2px;
+.menu-item-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
 }
 
-.news-card-content::-webkit-scrollbar-thumb {
-  background: #c1c1c1;
-  border-radius: 2px;
+.menu-icon {
+  font-size: 20px;
+  width: 24px;
+  text-align: center;
 }
 
-.news-card-content::-webkit-scrollbar-thumb:hover {
-  background: #a8a8a8;
+.menu-title {
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+}
+
+.chevron {
+  color: #999;
+  font-weight: bold;
+  font-size: 18px;
 }
 
 /* Стили Swiper */
@@ -122,15 +224,15 @@ body {
 }
 
 .swiper-slide {
-  height: auto; /* Высота определяется содержимым */
+  height: auto;
 }
 
 .swiper-wrapper {
-  align-items: stretch; /* Все слайды одинаковой высоты */
+  align-items: stretch;
 }
 
 .swiper-slide {
-  height: auto !important; /* Переопределяем высоту от Swiper */
+  height: auto !important;
 }
 
 .swiper-button-next,
@@ -158,50 +260,22 @@ body {
   background: #007bff !important;
 }
 
-/* Разделитель */
-.divider {
-  border: none;
-  border-top: 1px solid #e0e0e0;
-  margin: 24px 0;
-}
-
-/* Меню (Показания счетчиков) */
-.menu-list {
-  background-color: #fff;
-  border-radius: 8px;
-  overflow: hidden;
-  border: 1px solid #e0e0e0;
-}
-
-.menu-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 16px;
-  border-bottom: 1px solid #f0f0f0;
-  font-size: 16px;
-}
-
-.menu-item:last-child {
-  border-bottom: none;
-}
-
-.chevron {
-  color: #999;
-  font-weight: bold;
-}
-
-/* Список Моя квартира */
-.apartment-list {
-  list-style-type: none;
-}
-
-.apartment-list li {
-  padding: 16px;
-  border-bottom: 1px solid #f0f0f0;
-  font-size: 16px;
-}
-
-.apartment-list li:last-child {
-  border-bottom: none;
+/* Адаптивность */
+@media (max-width: 480px) {
+  .news-card {
+    height: 260px;
+  }
+  
+  .news-card-image {
+    height: 100px;
+  }
+  
+  .news-card-emoji-container {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .news-card-emoji {
+    font-size: 24px;
+  }
 }
